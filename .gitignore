@@ -8,3 +8,6 @@ dropin.cache
 doc/
 docs/_build/
 *~
+.coverage
+.tox/
+dist/
