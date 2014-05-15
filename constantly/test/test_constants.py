@@ -7,7 +7,7 @@ Unit tests for L{constantly.constants}.
 
 from __future__ import division, absolute_import
 
-from unittest import TestCase
+from unittest2 import TestCase
 
 from constantly import (
     NamedConstant, Names, ValueConstant, Values, FlagConstant, Flags
