@@ -1,4 +1,4 @@
-# -*- test-case-name: twisted.python.test.test_constants -*-
+# -*- test-case-name: constantly.test.test_constants -*-
 # Copyright (c) Twisted Matrix Laboratories.
 # See LICENSE for details.
 
