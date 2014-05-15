@@ -9,7 +9,7 @@ from __future__ import division, absolute_import
 
 from unittest import TestCase
 
-from constantly.constants import (
+from constantly import (
     NamedConstant, Names, ValueConstant, Values, FlagConstant, Flags
 )
 
