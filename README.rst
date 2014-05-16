@@ -1,7 +1,7 @@
 Constantly
 ==========
 
-Constants in Python!
+Library that provides symbolic constant support, including collections and constants with text, numeric, and bit flag values.
 Originally ``twisted.python.constants``, from the `Twisted <http://twistedmatrix.com>`_ project.
 
 
