@@ -1,32 +1,27 @@
+# Copyright (c) Twisted Matrix Laboratories.
+# See LICENSE for details.
+
 import codecs
 import os
-import re
+import versioneer
 
 from setuptools import setup
 
+# Versioneer!
+versioneer.VCS = 'git'
+versioneer.versionfile_source = 'constantly/_version.py'
+versioneer.versionfile_build = 'constantly/_version.py'
+versioneer.tag_prefix = ''
+versioneer.parentdir_prefix = 'constantly-'
 
 def read(*parts):
     """
-    Build an absolute path from *parts* and and return the contents of the
+    Build an absolute path from C{parts} and and return the contents of the
     resulting file.  Assume UTF-8 encoding.
     """
     here = os.path.abspath(os.path.dirname(__file__))
     with codecs.open(os.path.join(here, *parts), 'r', 'utf-8') as f:
         return f.read()
-
-
-def find_version(*file_paths):
-    """
-    Build a path from *file_paths* and search for a ``__version__``
-    string inside.
-    """
-    version_file = read(*file_paths)
-    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
-                              version_file, re.M)
-    if version_match:
-        return version_match.group(1)
-    raise RuntimeError("Unable to find version string.")
-
 
 if __name__ == "__main__":
     setup(
@@ -41,14 +36,14 @@ if __name__ == "__main__":
             'Programming Language :: Python :: Implementation :: PyPy',
             'Topic :: Software Development :: Libraries :: Python Modules'
         ],
-        description="Constants in Python",
+        description="Symbolic constants in Python",
         long_description=read('README.rst'),
         keywords="constants twisted",
         license="MIT",
         name="constantly",
         packages=["constantly"],
         url="https://github.com/twisted/constantly",
-        version=find_version('constantly', '__init__.py'),
-        maintainer='HawkOwl',
-        maintainer_email='hawkowl@atleastfornow.net',
+        maintainer='Twisted Matrix Labs Developers',
+        version=versioneer.get_version(),
+        cmdclass=versioneer.get_cmdclass(),
     )
