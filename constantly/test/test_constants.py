@@ -2,12 +2,12 @@
 # See LICENSE for details.
 
 """
-Unit tests for L{constantly.constants}.
+Unit tests for L{constantly}.
 """
 
 from __future__ import division, absolute_import
 
-from unittest2 import TestCase
+from twisted.trial.unittest import TestCase
 
 from constantly import (
     NamedConstant, Names, ValueConstant, Values, FlagConstant, Flags
@@ -17,7 +17,7 @@ from constantly import (
 
 class NamedConstantTests(TestCase):
     """
-    Tests for the L{constantly.constants.NamedConstant} class which is used
+    Tests for the L{constantly.NamedConstant} class which is used
     to represent individual values.
     """
     def setUp(self):
@@ -99,9 +99,8 @@ class _ConstantsTestsMixin(object):
         @param name: A C{str} giving the name of the constants collection.
         @param cls: The constants class to test.
         """
-        with self.assertRaises(TypeError) as exc:
-            cls()
-        self.assertEqual(name + " may not be instantiated.", str(exc.exception))
+        exc = self.assertRaises(TypeError, cls)
+        self.assertEqual(name + " may not be instantiated.", str(exc))
 
 
     def _initializedOnceTest(self, container, constantName):
@@ -121,13 +120,13 @@ class _ConstantsTestsMixin(object):
         getattr(container, constantName)
 
         second = container._enumerants
-        self.assertIs(first, second)
+        self.assertIdentical(first, second)
 
 
 
 class NamesTests(TestCase, _ConstantsTestsMixin):
     """
-    Tests for L{constantly.constants.Names}, a base class for containers of
+    Tests for L{constantly.Names}, a base class for containers of
     related constaints.
     """
     def setUp(self):
@@ -192,7 +191,7 @@ class NamesTests(TestCase, _ConstantsTestsMixin):
         Constants can be looked up by name using L{Names.lookupByName}.
         """
         method = self.METHOD.lookupByName("GET")
-        self.assertIs(self.METHOD.GET, method)
+        self.assertIdentical(self.METHOD.GET, method)
 
 
     def test_notLookupMissingByName(self):
@@ -219,7 +218,7 @@ class NamesTests(TestCase, _ConstantsTestsMixin):
         Repeated access of an attribute associated with a L{NamedConstant}
         value in a L{Names} subclass results in the same object.
         """
-        self.assertIs(self.METHOD.GET, self.METHOD.GET)
+        self.assertIdentical(self.METHOD.GET, self.METHOD.GET)
 
 
     def test_iterconstants(self):
@@ -240,10 +239,10 @@ class NamesTests(TestCase, _ConstantsTestsMixin):
         constants accessible using attributes.
         """
         constants = list(self.METHOD.iterconstants())
-        self.assertIs(self.METHOD.GET, constants[0])
-        self.assertIs(self.METHOD.PUT, constants[1])
-        self.assertIs(self.METHOD.POST, constants[2])
-        self.assertIs(self.METHOD.DELETE, constants[3])
+        self.assertIdentical(self.METHOD.GET, constants[0])
+        self.assertIdentical(self.METHOD.PUT, constants[1])
+        self.assertIdentical(self.METHOD.POST, constants[2])
+        self.assertIdentical(self.METHOD.DELETE, constants[3])
 
 
     def test_iterconstantsIdentity(self):
@@ -253,10 +252,10 @@ class NamesTests(TestCase, _ConstantsTestsMixin):
         """
         constants = list(self.METHOD.iterconstants())
         again = list(self.METHOD.iterconstants())
-        self.assertIs(again[0], constants[0])
-        self.assertIs(again[1], constants[1])
-        self.assertIs(again[2], constants[2])
-        self.assertIs(again[3], constants[3])
+        self.assertIdentical(again[0], constants[0])
+        self.assertIdentical(again[1], constants[1])
+        self.assertIdentical(again[2], constants[2])
+        self.assertIdentical(again[3], constants[3])
 
 
     def test_initializedOnce(self):
@@ -275,7 +274,7 @@ class NamesTests(TestCase, _ConstantsTestsMixin):
         class Another(object):
             something = self.METHOD.GET
 
-        self.assertIs(self.METHOD.GET, Another.something)
+        self.assertIdentical(self.METHOD.GET, Another.something)
 
 
     def test_asForeignClassAttributeViaInstance(self):
@@ -287,7 +286,7 @@ class NamesTests(TestCase, _ConstantsTestsMixin):
         class Another(object):
             something = self.METHOD.GET
 
-        self.assertIs(self.METHOD.GET, Another().something)
+        self.assertIdentical(self.METHOD.GET, Another().something)
 
 
     def test_notAsAlternateContainerAttribute(self):
@@ -300,18 +299,17 @@ class NamesTests(TestCase, _ConstantsTestsMixin):
             class AnotherNames(Names):
                 something = self.METHOD.GET
 
-        with self.assertRaises(ValueError) as exc:
-            defineIt()
+        exc = self.assertRaises(ValueError, defineIt)
         self.assertEqual(
             "Cannot use <METHOD=GET> as the value of an attribute on "
             "AnotherNames",
-            str(exc.exception))
+            str(exc))
 
 
 
 class ValuesTests(TestCase, _ConstantsTestsMixin):
     """
-    Tests for L{constantly.constants.Names}, a base class for containers of
+    Tests for L{constantly.Names}, a base class for containers of
     related constaints with arbitrary values.
     """
     def setUp(self):
@@ -367,7 +365,7 @@ class ValuesTests(TestCase, _ConstantsTestsMixin):
         Constants can be looked up by name using L{Values.lookupByName}.
         """
         method = self.STATUS.lookupByName("OK")
-        self.assertIs(self.STATUS.OK, method)
+        self.assertIdentical(self.STATUS.OK, method)
 
 
     def test_notLookupMissingByName(self):
@@ -386,7 +384,7 @@ class ValuesTests(TestCase, _ConstantsTestsMixin):
         argument passed to L{ValueConstant}, using L{Values.lookupByValue}.
         """
         status = self.STATUS.lookupByValue("200")
-        self.assertIs(self.STATUS.OK, status)
+        self.assertIdentical(self.STATUS.OK, status)
 
 
     def test_lookupDuplicateByValue(self):
@@ -401,7 +399,7 @@ class ValuesTests(TestCase, _ConstantsTestsMixin):
             KEX_DH_GEX_REQUEST_OLD = ValueConstant(30)
             KEXDH_INIT = ValueConstant(30)
 
-        self.assertIs(
+        self.assertIdentical(
             TRANSPORT_MESSAGE.lookupByValue(30),
             TRANSPORT_MESSAGE.KEX_DH_GEX_REQUEST_OLD)
 
@@ -429,7 +427,7 @@ class ValuesTests(TestCase, _ConstantsTestsMixin):
         Repeated access of an attribute associated with a L{ValueConstant}
         value in a L{Values} subclass results in the same object.
         """
-        self.assertIs(self.STATUS.OK, self.STATUS.OK)
+        self.assertIdentical(self.STATUS.OK, self.STATUS.OK)
 
 
     def test_iterconstants(self):
@@ -449,8 +447,8 @@ class ValuesTests(TestCase, _ConstantsTestsMixin):
         the constants accessible using attributes.
         """
         constants = list(self.STATUS.iterconstants())
-        self.assertIs(self.STATUS.OK, constants[0])
-        self.assertIs(self.STATUS.NOT_FOUND, constants[1])
+        self.assertIdentical(self.STATUS.OK, constants[0])
+        self.assertIdentical(self.STATUS.NOT_FOUND, constants[1])
 
 
     def test_iterconstantsIdentity(self):
@@ -460,8 +458,8 @@ class ValuesTests(TestCase, _ConstantsTestsMixin):
         """
         constants = list(self.STATUS.iterconstants())
         again = list(self.STATUS.iterconstants())
-        self.assertIs(again[0], constants[0])
-        self.assertIs(again[1], constants[1])
+        self.assertIdentical(again[0], constants[0])
+        self.assertIdentical(again[1], constants[1])
 
 
     def test_initializedOnce(self):
@@ -504,7 +502,7 @@ class _FlagsTestsMixin(object):
 
 class FlagsTests(_FlagsTestsMixin, TestCase, _ConstantsTestsMixin):
     """
-    Tests for L{constantly.constants.Flags}, a base class for containers of
+    Tests for L{constantly.Flags}, a base class for containers of
     related, combinable flag or bitvector-like constants.
     """
     def test_notInstantiable(self):
@@ -549,7 +547,7 @@ class FlagsTests(_FlagsTestsMixin, TestCase, _ConstantsTestsMixin):
         Constants can be looked up by name using L{Flags.lookupByName}.
         """
         flag = self.FXF.lookupByName("READ")
-        self.assertIs(self.FXF.READ, flag)
+        self.assertIdentical(self.FXF.READ, flag)
 
 
     def test_notLookupMissingByName(self):
@@ -569,19 +567,19 @@ class FlagsTests(_FlagsTestsMixin, TestCase, _ConstantsTestsMixin):
         definition or explicitly by the argument passed to L{FlagConstant}.
         """
         flag = self.FXF.lookupByValue(0x01)
-        self.assertIs(flag, self.FXF.READ)
+        self.assertIdentical(flag, self.FXF.READ)
 
         flag = self.FXF.lookupByValue(0x02)
-        self.assertIs(flag, self.FXF.WRITE)
+        self.assertIdentical(flag, self.FXF.WRITE)
 
         flag = self.FXF.lookupByValue(0x04)
-        self.assertIs(flag, self.FXF.APPEND)
+        self.assertIdentical(flag, self.FXF.APPEND)
 
         flag = self.FXF.lookupByValue(0x20)
-        self.assertIs(flag, self.FXF.EXCLUSIVE)
+        self.assertIdentical(flag, self.FXF.EXCLUSIVE)
 
         flag = self.FXF.lookupByValue(0x40)
-        self.assertIs(flag, self.FXF.TEXT)
+        self.assertIdentical(flag, self.FXF.TEXT)
 
 
     def test_lookupDuplicateByValue(self):
@@ -596,7 +594,7 @@ class FlagsTests(_FlagsTestsMixin, TestCase, _ConstantsTestsMixin):
             #  xntp 3.4 compatibility names
             MOD_OFFSET = FlagConstant(0x0001)
 
-        self.assertIs(TIMEX.lookupByValue(0x0001), TIMEX.ADJ_OFFSET)
+        self.assertIdentical(TIMEX.lookupByValue(0x0001), TIMEX.ADJ_OFFSET)
 
 
     def test_notLookupMissingByValue(self):
@@ -620,7 +618,7 @@ class FlagsTests(_FlagsTestsMixin, TestCase, _ConstantsTestsMixin):
         Repeated access of an attribute associated with a L{FlagConstant} value
         in a L{Flags} subclass results in the same object.
         """
-        self.assertIs(self.FXF.READ, self.FXF.READ)
+        self.assertIdentical(self.FXF.READ, self.FXF.READ)
 
 
     def test_iterconstants(self):
@@ -641,11 +639,11 @@ class FlagsTests(_FlagsTestsMixin, TestCase, _ConstantsTestsMixin):
         constants accessible using attributes.
         """
         constants = list(self.FXF.iterconstants())
-        self.assertIs(self.FXF.READ, constants[0])
-        self.assertIs(self.FXF.WRITE, constants[1])
-        self.assertIs(self.FXF.APPEND, constants[2])
-        self.assertIs(self.FXF.EXCLUSIVE, constants[3])
-        self.assertIs(self.FXF.TEXT, constants[4])
+        self.assertIdentical(self.FXF.READ, constants[0])
+        self.assertIdentical(self.FXF.WRITE, constants[1])
+        self.assertIdentical(self.FXF.APPEND, constants[2])
+        self.assertIdentical(self.FXF.EXCLUSIVE, constants[3])
+        self.assertIdentical(self.FXF.TEXT, constants[4])
 
 
     def test_iterconstantsIdentity(self):
@@ -655,11 +653,11 @@ class FlagsTests(_FlagsTestsMixin, TestCase, _ConstantsTestsMixin):
         """
         constants = list(self.FXF.iterconstants())
         again = list(self.FXF.iterconstants())
-        self.assertIs(again[0], constants[0])
-        self.assertIs(again[1], constants[1])
-        self.assertIs(again[2], constants[2])
-        self.assertIs(again[3], constants[3])
-        self.assertIs(again[4], constants[4])
+        self.assertIdentical(again[0], constants[0])
+        self.assertIdentical(again[1], constants[1])
+        self.assertIdentical(again[2], constants[2])
+        self.assertIdentical(again[3], constants[3])
+        self.assertIdentical(again[4], constants[4])
 
 
     def test_initializedOnce(self):
@@ -889,7 +887,7 @@ class OrderedConstantsTests(TestCase):
     """
     def test_orderedNameConstants_lt(self):
         """
-        L{constantly.constants.NamedConstant} preserves definition
+        L{constantly.NamedConstant} preserves definition
         order in C{<} comparisons.
         """
         self.assertTrue(NamedLetters.alpha < NamedLetters.beta)
@@ -897,7 +895,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedNameConstants_le(self):
         """
-        L{constantly.constants.NamedConstant} preserves definition
+        L{constantly.NamedConstant} preserves definition
         order in C{<=} comparisons.
         """
         self.assertTrue(NamedLetters.alpha <= NamedLetters.alpha)
@@ -906,7 +904,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedNameConstants_gt(self):
         """
-        L{constantly.constants.NamedConstant} preserves definition
+        L{constantly.NamedConstant} preserves definition
         order in C{>} comparisons.
         """
         self.assertTrue(NamedLetters.beta > NamedLetters.alpha)
@@ -914,7 +912,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedNameConstants_ge(self):
         """
-        L{constantly.constants.NamedConstant} preserves definition
+        L{constantly.NamedConstant} preserves definition
         order in C{>=} comparisons.
         """
         self.assertTrue(NamedLetters.alpha >= NamedLetters.alpha)
@@ -923,7 +921,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedValueConstants_lt(self):
         """
-        L{constantly.constants.ValueConstant} preserves definition
+        L{constantly.ValueConstant} preserves definition
         order in C{<} comparisons.
         """
         self.assertTrue(ValuedLetters.alpha < ValuedLetters.digamma)
@@ -932,7 +930,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedValueConstants_le(self):
         """
-        L{constantly.constants.ValueConstant} preserves definition
+        L{constantly.ValueConstant} preserves definition
         order in C{<=} comparisons.
         """
         self.assertTrue(ValuedLetters.alpha <= ValuedLetters.alpha)
@@ -942,7 +940,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedValueConstants_gt(self):
         """
-        L{constantly.constants.ValueConstant} preserves definition
+        L{constantly.ValueConstant} preserves definition
         order in C{>} comparisons.
         """
         self.assertTrue(ValuedLetters.digamma > ValuedLetters.alpha)
@@ -951,7 +949,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedValueConstants_ge(self):
         """
-        L{constantly.constants.ValueConstant} preserves definition
+        L{constantly.ValueConstant} preserves definition
         order in C{>=} comparisons.
         """
         self.assertTrue(ValuedLetters.alpha >= ValuedLetters.alpha)
@@ -961,7 +959,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedFlagConstants_lt(self):
         """
-        L{constantly.constants.FlagConstant} preserves definition
+        L{constantly.FlagConstant} preserves definition
         order in C{<} comparisons.
         """
         self.assertTrue(PizzaToppings.mozzarella < PizzaToppings.pesto)
@@ -970,7 +968,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedFlagConstants_le(self):
         """
-        L{constantly.constants.FlagConstant} preserves definition
+        L{constantly.FlagConstant} preserves definition
         order in C{<=} comparisons.
         """
         self.assertTrue(PizzaToppings.mozzarella <= PizzaToppings.mozzarella)
@@ -980,7 +978,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedFlagConstants_gt(self):
         """
-        L{constantly.constants.FlagConstant} preserves definition
+        L{constantly.FlagConstant} preserves definition
         order in C{>} comparisons.
         """
         self.assertTrue(PizzaToppings.pesto > PizzaToppings.mozzarella)
@@ -989,7 +987,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedFlagConstants_ge(self):
         """
-        L{constantly.constants.FlagConstant} preserves definition
+        L{constantly.FlagConstant} preserves definition
         order in C{>=} comparisons.
         """
         self.assertTrue(PizzaToppings.mozzarella >= PizzaToppings.mozzarella)
@@ -999,7 +997,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentConstants_lt(self):
         """
-        L{constantly.constants._Constant.__lt__} returns C{NotImplemented}
+        L{constantly._Constant.__lt__} returns C{NotImplemented}
         when comparing constants of different types.
         """
         self.assertEquals(
@@ -1010,7 +1008,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentConstants_le(self):
         """
-        L{constantly.constants._Constant.__le__} returns C{NotImplemented}
+        L{constantly._Constant.__le__} returns C{NotImplemented}
         when comparing constants of different types.
         """
         self.assertEquals(
@@ -1021,7 +1019,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentConstants_gt(self):
         """
-        L{constantly.constants._Constant.__gt__} returns C{NotImplemented}
+        L{constantly._Constant.__gt__} returns C{NotImplemented}
         when comparing constants of different types.
         """
         self.assertEquals(
@@ -1032,7 +1030,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentConstants_ge(self):
         """
-        L{constantly.constants._Constant.__ge__} returns C{NotImplemented}
+        L{constantly._Constant.__ge__} returns C{NotImplemented}
         when comparing constants of different types.
         """
         self.assertEquals(
@@ -1043,7 +1041,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentContainers_lt(self):
         """
-        L{constantly.constants._Constant.__lt__} returns C{NotImplemented}
+        L{constantly._Constant.__lt__} returns C{NotImplemented}
         when comparing constants belonging to different containers.
         """
         self.assertEquals(
@@ -1054,7 +1052,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentContainers_le(self):
         """
-        L{constantly.constants._Constant.__le__} returns C{NotImplemented}
+        L{constantly._Constant.__le__} returns C{NotImplemented}
         when comparing constants belonging to different containers.
         """
         self.assertEquals(
@@ -1065,7 +1063,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentContainers_gt(self):
         """
-        L{constantly.constants._Constant.__gt__} returns C{NotImplemented}
+        L{constantly._Constant.__gt__} returns C{NotImplemented}
         when comparing constants belonging to different containers.
         """
         self.assertEquals(
@@ -1076,7 +1074,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentContainers_ge(self):
         """
-        L{constantly.constants._Constant.__ge__} returns C{NotImplemented}
+        L{constantly._Constant.__ge__} returns C{NotImplemented}
         when comparing constants belonging to different containers.
         """
         self.assertEquals(
