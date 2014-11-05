@@ -11,3 +11,5 @@ docs/_build/
 .coverage
 .tox/
 dist/
+MANIFEST
+htmlcov/
