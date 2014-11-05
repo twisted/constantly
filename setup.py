@@ -38,7 +38,7 @@ if __name__ == "__main__":
         ],
         description="Symbolic constants in Python",
         long_description=read('README.rst'),
-        keywords="constants twisted",
+        keywords="constants,enum,twisted",
         license="MIT",
         name="constantly",
         packages=["constantly"],

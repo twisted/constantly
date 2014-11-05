@@ -1,8 +1,9 @@
 Constantly
 ==========
 
-A library that provides symbolic constant support, including collections and constants with text, numeric, and bit flag values.
-Originally ``twisted.python.constants``, from the `Twisted <https://twistedmatrix.com/>`_ project.
+A library that provides symbolic constant support.
+It includes collections and constants with text, numeric, and bit flag values.
+Originally ``twisted.python.constants`` from the `Twisted <https://twistedmatrix.com/>`_ project.
 
 
 Tests
