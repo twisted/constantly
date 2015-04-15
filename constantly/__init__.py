@@ -11,7 +11,7 @@ del get_versions
 
 __author__  = "Twisted Matrix Laboratories"
 __license__ = "MIT"
-__copyright__ = "Copyright 2014 {0}".format(__author__)
+__copyright__ = "Copyright 2011-2015 {0}".format(__author__)
 
 
 __all__ = [
@@ -22,5 +22,3 @@ __all__ = [
     'Values',
     'Flags',
 ]
-
-
