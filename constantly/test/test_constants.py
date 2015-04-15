@@ -997,7 +997,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentConstants_lt(self):
         """
-        L{constantly.constants._Constant.__lt__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__lt__} returns C{NotImplemented}
         when comparing constants of different types.
         """
         self.assertEquals(
@@ -1008,7 +1008,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentConstants_le(self):
         """
-        L{constantly.constants._Constant.__le__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__le__} returns C{NotImplemented}
         when comparing constants of different types.
         """
         self.assertEquals(
@@ -1019,7 +1019,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentConstants_gt(self):
         """
-        L{constantly.constants._Constant.__gt__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__gt__} returns C{NotImplemented}
         when comparing constants of different types.
         """
         self.assertEquals(
@@ -1030,7 +1030,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentConstants_ge(self):
         """
-        L{constantly.constants._Constant.__ge__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__ge__} returns C{NotImplemented}
         when comparing constants of different types.
         """
         self.assertEquals(
@@ -1041,7 +1041,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentContainers_lt(self):
         """
-        L{constantly.constants._Constant.__lt__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__lt__} returns C{NotImplemented}
         when comparing constants belonging to different containers.
         """
         self.assertEquals(
@@ -1052,7 +1052,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentContainers_le(self):
         """
-        L{constantly.constants._Constant.__le__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__le__} returns C{NotImplemented}
         when comparing constants belonging to different containers.
         """
         self.assertEquals(
@@ -1063,7 +1063,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentContainers_gt(self):
         """
-        L{constantly.constants._Constant.__gt__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__gt__} returns C{NotImplemented}
         when comparing constants belonging to different containers.
         """
         self.assertEquals(
@@ -1074,7 +1074,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentContainers_ge(self):
         """
-        L{constantly.constants._Constant.__ge__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__ge__} returns C{NotImplemented}
         when comparing constants belonging to different containers.
         """
         self.assertEquals(
