@@ -1,7 +1,7 @@
 # Copyright (c) Twisted Matrix Laboratories.
 # See LICENSE for details.
 
-from constantly.constants import (
+from constantly._constants import (
     NamedConstant, Names, ValueConstant, Values, FlagConstant, Flags
 )
 
