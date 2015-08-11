@@ -7,13 +7,6 @@ import versioneer
 
 from setuptools import setup
 
-# Versioneer!
-versioneer.VCS = 'git'
-versioneer.versionfile_source = 'constantly/_version.py'
-versioneer.versionfile_build = 'constantly/_version.py'
-versioneer.tag_prefix = ''
-versioneer.parentdir_prefix = 'constantly-'
-
 def read(*parts):
     """
     Build an absolute path from C{parts} and and return the contents of the
