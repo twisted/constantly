@@ -33,7 +33,7 @@ Only direct subclasses of ``Names`` are supported (i.e., you cannot subclass ``M
 
 Given this definition, constants can be looked up by name using attribute access on the ``METHOD`` object:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> METHOD.GET
     <METHOD=GET>
@@ -43,7 +43,7 @@ Given this definition, constants can be looked up by name using attribute access
 
 If it's necessary to look up constants from a string (e.g. based on user input of some sort), a safe way to do it is using ``lookupByName`` :
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> METHOD.lookupByName('GET')
     <METHOD=GET>
@@ -59,7 +59,7 @@ As demonstrated, it is safe because any name not associated with a constant (eve
 
 The constants can also be enumerated using the ``iterconstants`` method:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> list(METHOD.iterconstants())
     [<METHOD=GET>, <METHOD=PUT>, <METHOD=POST>, <METHOD=DELETE>]
@@ -67,7 +67,7 @@ The constants can also be enumerated using the ``iterconstants`` method:
 
 Constants can be compared for equality or identity:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> METHOD.GET is METHOD.GET
     True
@@ -122,7 +122,7 @@ Consider this definition of ``METHOD`` :
 
 This functionality can be used as any class methods are used:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> METHOD.isIdempotent(METHOD.GET)
     True
@@ -150,7 +150,7 @@ Consider this example, in which some HTTP status code constants are defined.
 
 As with ``Names`` , constants are accessed as attributes of the class object:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> STATUS.OK
     <STATUS=OK>
@@ -160,7 +160,7 @@ As with ``Names`` , constants are accessed as attributes of the class object:
 
 Additionally, the values of the constants can be accessed using the ``value`` attribute of one these objects:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> STATUS.OK.value
     '200'
@@ -168,7 +168,7 @@ Additionally, the values of the constants can be accessed using the ``value`` at
 
 As with ``Names`` , constants can be looked up by name:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> STATUS.lookupByName('NOT_FOUND')
     <STATUS=NOT_FOUND>
@@ -176,7 +176,7 @@ As with ``Names`` , constants can be looked up by name:
 
 Constants on a ``Values`` subclass can also be looked up by value:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> STATUS.lookupByValue('404')
     <STATUS=NOT_FOUND>
@@ -193,7 +193,7 @@ If they do, ``lookupByValue`` will find the one which is defined first.
 
 Iteration is also supported:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> list(STATUS.iterconstants())
     [<STATUS=OK>, <STATUS=FOUND>, <STATUS=NOT_FOUND>]
@@ -201,7 +201,7 @@ Iteration is also supported:
 
 Constants can be compared for equality, identity and ordering:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> STATUS.OK == STATUS.OK
     True
@@ -243,7 +243,7 @@ As with ``Names`` , a subclass of ``Values`` can define custom methods:
 
 This functionality can be used as any class methods are used:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> STATUS.hasBody(STATUS.OK)
     True
@@ -283,7 +283,7 @@ This state might be represented using ``Flags`` as follows:
 
 As for the previous types of constants, these can be accessed as attributes of the class object:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> Permission.USER_READ
     <Permission=USER_READ>
@@ -295,7 +295,7 @@ As for the previous types of constants, these can be accessed as attributes of t
 
 These constant objects also have a ``value`` attribute giving their integer value:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> Permission.USER_READ.value
     256
@@ -303,7 +303,7 @@ These constant objects also have a ``value`` attribute giving their integer valu
 
 These constants can be looked up by name or value:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> Permission.lookupByName('USER_READ') is Permission.USER_READ
     True
@@ -313,7 +313,7 @@ These constants can be looked up by name or value:
 
 Constants can also be combined using the logical operators ``&`` (*and* ), ``|`` (*or* ), and ``^`` (*exclusive or* ).
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> Permission.USER_READ | Permission.USER_WRITE
     <Permission={USER_READ,USER_WRITE}>
@@ -325,7 +325,7 @@ Constants can also be combined using the logical operators ``&`` (*and* ), ``|``
 
 These combined constants can be deconstructed via iteration:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> mode = Permission.USER_READ | Permission.USER_WRITE
     >>> list(mode)
@@ -338,7 +338,7 @@ These combined constants can be deconstructed via iteration:
 
 They can also be inspected via boolean operations:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> Permission.USER_READ & mode
     <Permission=USER_READ>
@@ -352,7 +352,7 @@ They can also be inspected via boolean operations:
 
 The unary operator ``~`` (*not* ) is also defined:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> ~Permission.USER_READ
     <Permission={GROUP_EXECUTE,GROUP_READ,GROUP_WRITE,OTHER_EXECUTE,OTHER_READ,OTHER_WRITE,USER_EXECUTE,USER_WRITE}>
@@ -360,7 +360,7 @@ The unary operator ``~`` (*not* ) is also defined:
 
 Constants created using these operators also have a ``value`` attribute.
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> (~Permission.USER_WRITE).value
     383
@@ -388,7 +388,7 @@ Consider this addition to that class:
 
 Use this like any other class method:
 
-.. code-block:: console
+.. code-block:: pycon
 
     >>> Permission.format(Permission.USER_READ | Permission.USER_WRITE | Permission.GROUP_READ | Permission.OTHER_READ)
     'rw-r--r--'
