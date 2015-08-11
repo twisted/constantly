@@ -39,7 +39,6 @@ Given this definition, constants can be looked up by name using attribute access
     <METHOD=GET>
     >>> METHOD.PUT
     <METHOD=PUT>
-    >>>
 
 If it's necessary to look up constants from a string (e.g. based on user input of some sort), a safe way to do it is using ``lookupByName`` :
 
@@ -53,7 +52,6 @@ If it's necessary to look up constants from a string (e.g. based on user input o
       File "twisted/python/constants.py", line 145, in lookupByName
         raise ValueError(name)
     ValueError: __doc__
-    >>>
 
 As demonstrated, it is safe because any name not associated with a constant (even those special names initialized by Python itself) will result in ``ValueError`` being raised, not some other object not intended to be used the way the constants are used.
 
@@ -63,7 +61,6 @@ The constants can also be enumerated using the ``iterconstants`` method:
 
     >>> list(METHOD.iterconstants())
     [<METHOD=GET>, <METHOD=PUT>, <METHOD=POST>, <METHOD=DELETE>]
-    >>>
 
 Constants can be compared for equality or identity:
 
@@ -77,7 +74,6 @@ Constants can be compared for equality or identity:
     False
     >>> METHOD.GET == METHOD.PUT
     False
-    >>>
 
 Ordered comparisons (and therefore sorting) also work.
 The order is defined to be the same as the instantiation order of the constants:
@@ -96,7 +92,6 @@ The order is defined to be the same as the instantiation order of the constants:
     False
     >>> sorted([Letters.b, Letters.a, Letters.c])
     [<Letters=a>, <Letters=b>, <Letters=c>]
-    >>>
 
 A subclass of ``Names`` may define class methods to implement custom functionality.
 Consider this definition of ``METHOD`` :
@@ -128,7 +123,6 @@ This functionality can be used as any class methods are used:
     True
     >>> METHOD.isIdempotent(METHOD.POST)
     False
-    >>>
 
 
 Constants With Values
@@ -156,7 +150,6 @@ As with ``Names`` , constants are accessed as attributes of the class object:
     <STATUS=OK>
     >>> STATUS.FOUND
     <STATUS=FOUND>
-    >>>
 
 Additionally, the values of the constants can be accessed using the ``value`` attribute of one these objects:
 
@@ -164,7 +157,6 @@ Additionally, the values of the constants can be accessed using the ``value`` at
 
     >>> STATUS.OK.value
     '200'
-    >>>
 
 As with ``Names`` , constants can be looked up by name:
 
@@ -172,7 +164,6 @@ As with ``Names`` , constants can be looked up by name:
 
     >>> STATUS.lookupByName('NOT_FOUND')
     <STATUS=NOT_FOUND>
-    >>>
 
 Constants on a ``Values`` subclass can also be looked up by value:
 
@@ -186,7 +177,6 @@ Constants on a ``Values`` subclass can also be looked up by value:
       File "twisted/python/constants.py", line 244, in lookupByValue
           raise ValueError(value)
     ValueError: 500
-    >>>
 
 Multiple constants may have the same value.
 If they do, ``lookupByValue`` will find the one which is defined first.
@@ -197,7 +187,6 @@ Iteration is also supported:
 
     >>> list(STATUS.iterconstants())
     [<STATUS=OK>, <STATUS=FOUND>, <STATUS=NOT_FOUND>]
-    >>>
 
 Constants can be compared for equality, identity and ordering:
 
@@ -215,7 +204,6 @@ Constants can be compared for equality, identity and ordering:
     True
     >>> STATUS.FOUND < STATUS.OK
     False
-    >>>
 
 Note that like ``Names`` , ``Values`` are ordered by instantiation order, not by value, though either order is the same in the above example.
 
@@ -249,7 +237,6 @@ This functionality can be used as any class methods are used:
     True
     >>> STATUS.hasBody(STATUS.NO_CONTENT)
     False
-    >>>
 
 
 Constants As Flags
@@ -291,7 +278,6 @@ As for the previous types of constants, these can be accessed as attributes of t
     <Permission=USER_WRITE>
     >>> Permission.USER_EXECUTE
     <Permission=USER_EXECUTE>
-    >>>
 
 These constant objects also have a ``value`` attribute giving their integer value:
 
@@ -299,7 +285,6 @@ These constant objects also have a ``value`` attribute giving their integer valu
 
     >>> Permission.USER_READ.value
     256
-    >>>
 
 These constants can be looked up by name or value:
 
@@ -309,7 +294,6 @@ These constants can be looked up by name or value:
     True
     >>> Permission.lookupByValue(256) is Permission.USER_READ
     True
-    >>>
 
 Constants can also be combined using the logical operators ``&`` (*and* ), ``|`` (*or* ), and ``^`` (*exclusive or* ).
 
@@ -321,7 +305,6 @@ Constants can also be combined using the logical operators ``&`` (*and* ), ``|``
     <Permission=USER_WRITE>
     >>> (Permission.USER_READ | Permission.USER_WRITE) ^ Permission.USER_WRITE
     <Permission=USER_READ>
-    >>>
 
 These combined constants can be deconstructed via iteration:
 
@@ -334,7 +317,6 @@ These combined constants can be deconstructed via iteration:
     True
     >>> Permission.USER_EXECUTE in mode
     False
-    >>>
 
 They can also be inspected via boolean operations:
 
@@ -348,7 +330,6 @@ They can also be inspected via boolean operations:
     <Permission={}>
     >>> bool(Permission.USER_EXECUTE & mode)
     False
-    >>>
 
 The unary operator ``~`` (*not* ) is also defined:
 
@@ -356,7 +337,6 @@ The unary operator ``~`` (*not* ) is also defined:
 
     >>> ~Permission.USER_READ
     <Permission={GROUP_EXECUTE,GROUP_READ,GROUP_WRITE,OTHER_EXECUTE,OTHER_READ,OTHER_WRITE,USER_EXECUTE,USER_WRITE}>
-    >>>
 
 Constants created using these operators also have a ``value`` attribute.
 
@@ -364,7 +344,6 @@ Constants created using these operators also have a ``value`` attribute.
 
     >>> (~Permission.USER_WRITE).value
     383
-    >>>
 
 Note the care taken to ensure the ``~`` operator is applied first and the ``value`` attribute is looked up second.
 
@@ -392,4 +371,3 @@ Use this like any other class method:
 
     >>> Permission.format(Permission.USER_READ | Permission.USER_WRITE | Permission.GROUP_READ | Permission.OTHER_READ)
     'rw-r--r--'
-    >>>
