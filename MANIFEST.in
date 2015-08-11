@@ -1,0 +1,5 @@
+include versioneer.py
+include constantly/_version.py
+include README.rst
+include LICENSE
+include CREDITS

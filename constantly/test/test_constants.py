@@ -2,14 +2,14 @@
 # See LICENSE for details.
 
 """
-Unit tests for L{twisted.python.constants}.
+Unit tests for L{constantly}.
 """
 
 from __future__ import division, absolute_import
 
 from twisted.trial.unittest import TestCase
 
-from twisted.python.constants import (
+from constantly import (
     NamedConstant, Names, ValueConstant, Values, FlagConstant, Flags
 )
 
@@ -17,7 +17,7 @@ from twisted.python.constants import (
 
 class NamedConstantTests(TestCase):
     """
-    Tests for the L{twisted.python.constants.NamedConstant} class which is used
+    Tests for the L{constantly.NamedConstant} class which is used
     to represent individual values.
     """
     def setUp(self):
@@ -126,7 +126,7 @@ class _ConstantsTestsMixin(object):
 
 class NamesTests(TestCase, _ConstantsTestsMixin):
     """
-    Tests for L{twisted.python.constants.Names}, a base class for containers of
+    Tests for L{constantly.Names}, a base class for containers of
     related constaints.
     """
     def setUp(self):
@@ -309,7 +309,7 @@ class NamesTests(TestCase, _ConstantsTestsMixin):
 
 class ValuesTests(TestCase, _ConstantsTestsMixin):
     """
-    Tests for L{twisted.python.constants.Names}, a base class for containers of
+    Tests for L{constantly.Names}, a base class for containers of
     related constaints with arbitrary values.
     """
     def setUp(self):
@@ -502,7 +502,7 @@ class _FlagsTestsMixin(object):
 
 class FlagsTests(_FlagsTestsMixin, TestCase, _ConstantsTestsMixin):
     """
-    Tests for L{twisted.python.constants.Flags}, a base class for containers of
+    Tests for L{constantly.Flags}, a base class for containers of
     related, combinable flag or bitvector-like constants.
     """
     def test_notInstantiable(self):
@@ -887,7 +887,7 @@ class OrderedConstantsTests(TestCase):
     """
     def test_orderedNameConstants_lt(self):
         """
-        L{twisted.python.constants.NamedConstant} preserves definition
+        L{constantly.NamedConstant} preserves definition
         order in C{<} comparisons.
         """
         self.assertTrue(NamedLetters.alpha < NamedLetters.beta)
@@ -895,7 +895,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedNameConstants_le(self):
         """
-        L{twisted.python.constants.NamedConstant} preserves definition
+        L{constantly.NamedConstant} preserves definition
         order in C{<=} comparisons.
         """
         self.assertTrue(NamedLetters.alpha <= NamedLetters.alpha)
@@ -904,7 +904,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedNameConstants_gt(self):
         """
-        L{twisted.python.constants.NamedConstant} preserves definition
+        L{constantly.NamedConstant} preserves definition
         order in C{>} comparisons.
         """
         self.assertTrue(NamedLetters.beta > NamedLetters.alpha)
@@ -912,7 +912,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedNameConstants_ge(self):
         """
-        L{twisted.python.constants.NamedConstant} preserves definition
+        L{constantly.NamedConstant} preserves definition
         order in C{>=} comparisons.
         """
         self.assertTrue(NamedLetters.alpha >= NamedLetters.alpha)
@@ -921,7 +921,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedValueConstants_lt(self):
         """
-        L{twisted.python.constants.ValueConstant} preserves definition
+        L{constantly.ValueConstant} preserves definition
         order in C{<} comparisons.
         """
         self.assertTrue(ValuedLetters.alpha < ValuedLetters.digamma)
@@ -930,7 +930,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedValueConstants_le(self):
         """
-        L{twisted.python.constants.ValueConstant} preserves definition
+        L{constantly.ValueConstant} preserves definition
         order in C{<=} comparisons.
         """
         self.assertTrue(ValuedLetters.alpha <= ValuedLetters.alpha)
@@ -940,7 +940,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedValueConstants_gt(self):
         """
-        L{twisted.python.constants.ValueConstant} preserves definition
+        L{constantly.ValueConstant} preserves definition
         order in C{>} comparisons.
         """
         self.assertTrue(ValuedLetters.digamma > ValuedLetters.alpha)
@@ -949,7 +949,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedValueConstants_ge(self):
         """
-        L{twisted.python.constants.ValueConstant} preserves definition
+        L{constantly.ValueConstant} preserves definition
         order in C{>=} comparisons.
         """
         self.assertTrue(ValuedLetters.alpha >= ValuedLetters.alpha)
@@ -959,7 +959,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedFlagConstants_lt(self):
         """
-        L{twisted.python.constants.FlagConstant} preserves definition
+        L{constantly.FlagConstant} preserves definition
         order in C{<} comparisons.
         """
         self.assertTrue(PizzaToppings.mozzarella < PizzaToppings.pesto)
@@ -968,7 +968,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedFlagConstants_le(self):
         """
-        L{twisted.python.constants.FlagConstant} preserves definition
+        L{constantly.FlagConstant} preserves definition
         order in C{<=} comparisons.
         """
         self.assertTrue(PizzaToppings.mozzarella <= PizzaToppings.mozzarella)
@@ -978,7 +978,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedFlagConstants_gt(self):
         """
-        L{twisted.python.constants.FlagConstant} preserves definition
+        L{constantly.FlagConstant} preserves definition
         order in C{>} comparisons.
         """
         self.assertTrue(PizzaToppings.pesto > PizzaToppings.mozzarella)
@@ -987,7 +987,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedFlagConstants_ge(self):
         """
-        L{twisted.python.constants.FlagConstant} preserves definition
+        L{constantly.FlagConstant} preserves definition
         order in C{>=} comparisons.
         """
         self.assertTrue(PizzaToppings.mozzarella >= PizzaToppings.mozzarella)
@@ -997,7 +997,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentConstants_lt(self):
         """
-        L{twisted.python.constants._Constant.__lt__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__lt__} returns C{NotImplemented}
         when comparing constants of different types.
         """
         self.assertEquals(
@@ -1008,7 +1008,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentConstants_le(self):
         """
-        L{twisted.python.constants._Constant.__le__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__le__} returns C{NotImplemented}
         when comparing constants of different types.
         """
         self.assertEquals(
@@ -1019,7 +1019,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentConstants_gt(self):
         """
-        L{twisted.python.constants._Constant.__gt__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__gt__} returns C{NotImplemented}
         when comparing constants of different types.
         """
         self.assertEquals(
@@ -1030,7 +1030,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentConstants_ge(self):
         """
-        L{twisted.python.constants._Constant.__ge__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__ge__} returns C{NotImplemented}
         when comparing constants of different types.
         """
         self.assertEquals(
@@ -1041,7 +1041,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentContainers_lt(self):
         """
-        L{twisted.python.constants._Constant.__lt__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__lt__} returns C{NotImplemented}
         when comparing constants belonging to different containers.
         """
         self.assertEquals(
@@ -1052,7 +1052,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentContainers_le(self):
         """
-        L{twisted.python.constants._Constant.__le__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__le__} returns C{NotImplemented}
         when comparing constants belonging to different containers.
         """
         self.assertEquals(
@@ -1063,7 +1063,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentContainers_gt(self):
         """
-        L{twisted.python.constants._Constant.__gt__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__gt__} returns C{NotImplemented}
         when comparing constants belonging to different containers.
         """
         self.assertEquals(
@@ -1074,7 +1074,7 @@ class OrderedConstantsTests(TestCase):
 
     def test_orderedDifferentContainers_ge(self):
         """
-        L{twisted.python.constants._Constant.__ge__} returns C{NotImplemented}
+        L{constantly._constants._Constant.__ge__} returns C{NotImplemented}
         when comparing constants belonging to different containers.
         """
         self.assertEquals(
