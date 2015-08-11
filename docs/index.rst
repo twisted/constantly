@@ -49,7 +49,7 @@ If it's necessary to look up constants from a string (e.g. based on user input o
     >>> METHOD.lookupByName('__doc__')
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
-      File "twisted/python/constants.py", line 145, in lookupByName
+      File "constantly/_constants.py", line 145, in lookupByName
         raise ValueError(name)
     ValueError: __doc__
 
@@ -174,7 +174,7 @@ Constants on a ``Values`` subclass can also be looked up by value:
     >>> STATUS.lookupByValue('500')
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
-      File "twisted/python/constants.py", line 244, in lookupByValue
+      File "constantly/_constants.py", line 244, in lookupByValue
           raise ValueError(value)
     ValueError: 500
 
