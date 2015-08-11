@@ -1,18 +1,12 @@
-
-:LastChangedDate: $LastChangedDate$
-:LastChangedRevision: $LastChangedRevision$
-:LastChangedBy: $LastChangedBy$
-
-
-Symbolic Constants
-==================
+Constantly -- Symbolic Constants in Python
+==========================================
 
 
 Overview
 --------
 
 It is often useful to define names which will be treated as constants.
-:api:`twisted.python.constants <twisted.python.constants>` provides APIs for defining such symbolic constants with minimal overhead and some useful features beyond those afforded by the common Python idioms for this task.
+`constantly` provides APIs for defining such symbolic constants with minimal overhead and some useful features beyond those afforded by the common Python idioms for this task.
 
 This document will explain how to use these APIs and what circumstances they might be helpful in.
 
@@ -20,12 +14,12 @@ This document will explain how to use these APIs and what circumstances they mig
 Constant Names
 --------------
 
-Constants which have no value apart from their name and identity can be defined by subclassing :api:`twisted.python.constants.Names <Names>` .
+Constants which have no value apart from their name and identity can be defined by subclassing `constantly.Names` .
 Consider this example, in which some HTTP request method constants are defined.
 
 .. code-block:: python
 
-    from twisted.python.constants import NamedConstant, Names
+    from constantly import NamedConstant, Names
     class METHOD(Names):
         """
         Constants representing various HTTP request methods.
@@ -90,7 +84,7 @@ The order is defined to be the same as the instantiation order of the constants:
 
 .. code-block:: python
 
-    >>> from twisted.python.constants import NamedConstant, Names
+    >>> from constantly import NamedConstant, Names
     >>> class Letters(Names):
     ...   a = NamedConstant()
     ...   b = NamedConstant()
@@ -109,7 +103,7 @@ Consider this definition of ``METHOD`` :
 
 .. code-block:: python
 
-    from twisted.python.constants import NamedConstant, Names
+    from constantly import NamedConstant, Names
     class METHOD(Names):
         """
         Constants representing various HTTP request methods.
@@ -140,12 +134,12 @@ This functionality can be used as any class methods are used:
 Constants With Values
 ---------------------
 
-Constants with a particular associated value are supported by the :api:`twisted.python.constants.Values <Values>` base class.
+Constants with a particular associated value are supported by the `constantly.Values` base class.
 Consider this example, in which some HTTP status code constants are defined.
 
 .. code-block:: python
 
-    from twisted.python.constants import ValueConstant, Values
+    from constantly import ValueConstant, Values
     class STATUS(Values):
         """
         Constants representing various HTTP status codes.
@@ -229,7 +223,7 @@ As with ``Names`` , a subclass of ``Values`` can define custom methods:
 
 .. code-block:: python
 
-    from twisted.python.constants import ValueConstant, Values
+    from constantly import ValueConstant, Values
     class STATUS(Values):
         """
         Constants representing various HTTP status codes.
@@ -264,14 +258,14 @@ Constants As Flags
 Integers are often used as a simple set for constants.
 The values for these constants are assigned as powers of two so that bits in the integer can be set to represent them.
 Individual bits are often called *flags* .
-:api:`twisted.python.constants.Flags <Flags>` supports this use-case, including allowing constants with particular bits to be set, for interoperability with other tools.
+`constantly.Flags` supports this use-case, including allowing constants with particular bits to be set, for interoperability with other tools.
 
 POSIX filesystem access control is traditionally done using a bitvector defining which users and groups may perform which operations on a file.
 This state might be represented using ``Flags`` as follows:
 
 .. code-block:: python
 
-    from twisted.python.constants import FlagConstant, Flags
+    from constantly import FlagConstant, Flags
     class Permission(Flags):
         """
         Constants representing user, group, and other access bits for reading,
@@ -381,7 +375,7 @@ Consider this addition to that class:
 .. code-block:: python
 
     from twisted.python import filepath
-    from twisted.python.constants import FlagConstant, Flags
+    from constantly import FlagConstant, Flags
     class Permission(Flags):
         ...
 
