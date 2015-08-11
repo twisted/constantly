@@ -14,7 +14,7 @@ This document will explain how to use these APIs and what circumstances they mig
 Constant Names
 --------------
 
-Constants which have no value apart from their name and identity can be defined by subclassing `constantly.Names` .
+Constants which have no value apart from their name and identity can be defined by subclassing ``constantly.Names``.
 Consider this example, in which some HTTP request method constants are defined.
 
 .. code-block:: python
@@ -128,7 +128,7 @@ This functionality can be used as any class methods are used:
 Constants With Values
 ---------------------
 
-Constants with a particular associated value are supported by the `constantly.Values` base class.
+Constants with a particular associated value are supported by the ``constantly.Values`` base class.
 Consider this example, in which some HTTP status code constants are defined.
 
 .. code-block:: python
@@ -245,7 +245,7 @@ Constants As Flags
 Integers are often used as a simple set for constants.
 The values for these constants are assigned as powers of two so that bits in the integer can be set to represent them.
 Individual bits are often called *flags* .
-`constantly.Flags` supports this use-case, including allowing constants with particular bits to be set, for interoperability with other tools.
+``constantly.Flags`` supports this use-case, including allowing constants with particular bits to be set, for interoperability with other tools.
 
 POSIX filesystem access control is traditionally done using a bitvector defining which users and groups may perform which operations on a file.
 This state might be represented using ``Flags`` as follows:
