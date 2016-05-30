@@ -9,9 +9,7 @@ numeric, and bit flag values.
 
 from __future__ import division, absolute_import
 
-__all__ = [
-    'NamedConstant', 'ValueConstant', 'FlagConstant',
-    'Names', 'Values', 'Flags']
+__all__ = []
 
 from functools import partial
 from itertools import count
