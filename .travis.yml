@@ -3,21 +3,31 @@ python: 2.7
 sudo: false
 
 env:
+  global:
+    - secure: "Zmj7rrKx4z3JyaKNJUzILhMSESf7tCPBt9ad67veaX+fwYlJzrHUq+iy+5RXSye/g3vpsfehpKs/F2bAQcmX1ysLDOvd8w+UvwQPRi/GXxvVn7CHD6C4rpiSJAJHbCk7FZwQlo8P6VE8qiqUMCJcXjnjl63egkvJlkl6+rbE00E="
+  matrix:
     - TOX_ENV=py27-twlatest
     - TOX_ENV=pypy-twlatest
     - TOX_ENV=py27-twtrunk
     - TOX_ENV=pypy-twtrunk
     - TOX_ENV=py33-twtrunk
     - TOX_ENV=py34-twtrunk
+    - TOX_ENV=py35-twtrunk
     - TOX_ENV=pyflakes
     - TOX_ENV=cov
     - TOX_ENV=docs
+    - TOX_ENV=apidocs
+    - PUSH_DOCS=true
 
 matrix:
   fast_finish: true
 
 install:
   - pip install tox
+
+script:
+  - if [[ -n "${TOX_ENV}" ]]; then tox -e $TOX_ENV; fi
+  - if [[ "$PUSH_DOCS" == "true" ]]; then ./.travis/build_docs.sh; fi
 
 script:
   - tox -e $TOX_ENV
