@@ -5,9 +5,10 @@ sudo: false
 env:
   global:
     - secure: "Zmj7rrKx4z3JyaKNJUzILhMSESf7tCPBt9ad67veaX+fwYlJzrHUq+iy+5RXSye/g3vpsfehpKs/F2bAQcmX1ysLDOvd8w+UvwQPRi/GXxvVn7CHD6C4rpiSJAJHbCk7FZwQlo8P6VE8qiqUMCJcXjnjl63egkvJlkl6+rbE00E="
-  - python: 3.5
+  include:
+    - python: 3.5
       env:
-      - TOX_ENV=py35
+        - TOX_ENV=py35
   fast_finish: true
 
 env:
