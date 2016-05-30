@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>constantly._constants.NamedConstant : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="apidocs.css" type="text/css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            constantly API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>constantly._constants.NamedConstant(<a class="code" data-type="Class" href="constantly._constants._Constant.html">_Constant</a>)</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a class="code" data-type="Package" href="constantly.html">constantly</a>.<a class="code" data-type="Module" href="constantly._constants.html">_constants</a></code>
+          
+          <a href="classIndex.html#constantly._constants.NamedConstant">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p><a href="constantly._constants.NamedConstant.html"><code>NamedConstant</code></a>
+defines an attribute to be a named constant within a collection defined by 
+a <a href="constantly._constants.Names.html"><code>Names</code></a> 
+subclass.</p>
+<p><a href="constantly._constants.NamedConstant.html"><code>NamedConstant</code></a>
+is only for use in the definition of <a href="constantly._constants.Names.html"><code>Names</code></a> subclasses.
+Do not instantiate <a href="constantly._constants.NamedConstant.html"><code>NamedConstant</code></a>
+elsewhere and do not subclass it.</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        
+        
+          <p class="inheritedFrom">
+            Inherited from <a class="code" data-type="Class" href="constantly._constants._Constant.html">_Constant</a>:
+          </p>
+          <table class="children sortable" id="id6">
+  
+  <tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><a class="code" data-type="Instance Variable" href="constantly._constants._Constant.html#name">name</a></td>
+    <td>A <code>str</code> giving the name of this constant; only set once the 
+constant is initialized by <a href="constantly._constants._ConstantsContainer.html"><code>_ConstantsContainer</code></a>.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a class="code" data-type="Method" href="constantly._constants._Constant.html#__init__">__init__</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a class="code" data-type="Method" href="constantly._constants._Constant.html#__repr__">__repr__</a></td>
+    <td><span>Return text identifying both which constant this is and which collection
+it belongs to.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a class="code" data-type="Method" href="constantly._constants._Constant.html#__lt__">__lt__</a></td>
+    <td><span>Implements <code>&lt;</code>.  Order is defined by instantiation 
+order.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a class="code" data-type="Method" href="constantly._constants._Constant.html#__le__">__le__</a></td>
+    <td><span>Implements <code>&lt;=</code>.  Order is defined by instantiation 
+order.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a class="code" data-type="Method" href="constantly._constants._Constant.html#__gt__">__gt__</a></td>
+    <td><span>Implements <code>&gt;</code>.  Order is defined by instantiation 
+order.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a class="code" data-type="Method" href="constantly._constants._Constant.html#__ge__">__ge__</a></td>
+    <td><span>Implements <code>&gt;=</code>.  Order is defined by instantiation 
+order.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><a class="code" data-type="Instance Variable" href="constantly._constants._Constant.html#_index">_index</a></td>
+    <td>A <code>int</code> allocated from a shared counter in order to keep track 
+of the order in which <a href="constantly._constants._Constant.html"><code>_Constant</code></a>s are
+instantiated.</td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><a class="code" data-type="Instance Variable" href="constantly._constants._Constant.html#_container">_container</a></td>
+    <td>The <a href="constantly._constants._ConstantsContainer.html"><code>_ConstantsContainer</code></a>
+subclass this constant belongs to; <code>None</code> until the constant is 
+initialized by that subclass.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><a class="code" data-type="Method" href="constantly._constants._Constant.html#_realize">_realize</a></td>
+    <td><span>Complete the initialization of this <a href="constantly._constants._Constant.html"><code>_Constant</code></a>.</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for constantly, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-05-30 17:07:43.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>
