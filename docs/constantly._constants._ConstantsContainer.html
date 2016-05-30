@@ -6,8 +6,8 @@
     <title>constantly._constants._ConstantsContainer : API documentation</title>
 
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <link rel="stylesheet" href="bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="apidocs.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
   </head>
   <body>
 
@@ -22,7 +22,7 @@
     </nav>
 
     <div id="showPrivate">
-      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+      <button onclick="togglePrivate()" class="btn btn-link">Toggle Private API</button>
     </div>
 
     <div class="container">
@@ -31,14 +31,14 @@
         <h1 class="class private"><code>constantly._constants._ConstantsContainer(<span title="_ConstantsContainerType('', (object,), {})">_ConstantsContainerType('', (object,), {})</span>)</code> <small>class documentation</small></h1>
 
         <span id="partOf">
-          Part of <code><a class="code" data-type="Package" href="constantly.html">constantly</a>.<a class="code" data-type="Module" href="constantly._constants.html">_constants</a></code>
+          Part of <code><a href="constantly.html" data-type="Package" class="code">constantly</a>.<a href="constantly._constants.html" data-type="Module" class="code">_constants</a></code>
           
           <a href="classIndex.html#constantly._constants._ConstantsContainer">(View In Hierarchy)</a>
         </span>
       </div>
 
       <div class="extrasDocstring">
-        <p>Known subclasses: <a class="code" data-type="Class" href="constantly._constants.Names.html">constantly._constants.Names</a>, <a class="code" data-type="Class" href="constantly._constants.Values.html">constantly._constants.Values</a></p>
+        <p>Known subclasses: <a href="constantly.Names.html" data-type="Class" class="code">constantly.Names</a>, <a href="constantly.Values.html" data-type="Class" class="code">constantly.Values</a></p>
       </div>
 
       <div class="moduleDocstring">
@@ -48,42 +48,42 @@ subclasses to specify what kind of constants are allowed.</p><table class="field
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id5">
+        <table class="children sortable" id="id18">
   
   <tr class="method">
     
     <td>Method</td>
-    <td><a class="code" data-type="Method" href="constantly._constants._ConstantsContainer.html#__new__">__new__</a></td>
+    <td><a href="constantly._constants._ConstantsContainer.html#__new__" data-type="Method" class="code">__new__</a></td>
     <td><span>Classes representing constants containers are not intended to be 
 instantiated.</span></td>
   </tr><tr class="classmethod">
     
     <td>Class Method</td>
-    <td><a class="code" data-type="Class Method" href="constantly._constants._ConstantsContainer.html#lookupByName">lookupByName</a></td>
+    <td><a href="constantly._constants._ConstantsContainer.html#lookupByName" data-type="Class Method" class="code">lookupByName</a></td>
     <td><span>Retrieve a constant by its name or raise a <code>ValueError</code> if 
 there is no constant associated with that name.</span></td>
   </tr><tr class="classmethod">
     
     <td>Class Method</td>
-    <td><a class="code" data-type="Class Method" href="constantly._constants._ConstantsContainer.html#iterconstants">iterconstants</a></td>
-    <td><span>Iteration over a <a href="constantly._constants.Names.html"><code>Names</code></a> subclass 
-results in all of the constants it contains.</span></td>
+    <td><a href="constantly._constants._ConstantsContainer.html#iterconstants" data-type="Class Method" class="code">iterconstants</a></td>
+    <td><span>Iteration over a <a href="constantly.Names.html"><code>Names</code></a> 
+subclass results in all of the constants it contains.</span></td>
   </tr><tr class="classvariable private">
     
     <td>Class Variable</td>
-    <td><a class="code" data-type="Class Variable" href="constantly._constants._ConstantsContainer.html#_constantType">_constantType</a></td>
+    <td><a href="constantly._constants._ConstantsContainer.html#_constantType" data-type="Class Variable" class="code">_constantType</a></td>
     <td>Specified by a <a href="constantly._constants._ConstantsContainer.html"><code>_ConstantsContainer</code></a>
 subclass to specify the type of constants allowed by that subclass.</td>
   </tr><tr class="classvariable private">
     
     <td>Class Variable</td>
-    <td><a class="code" data-type="Class Variable" href="constantly._constants._ConstantsContainer.html#_enumerants">_enumerants</a></td>
-    <td>A <code>dict</code> mapping the names of constants (eg <a href="constantly._constants.NamedConstant.html"><code>NamedConstant</code></a>
+    <td><a href="constantly._constants._ConstantsContainer.html#_enumerants" data-type="Class Variable" class="code">_enumerants</a></td>
+    <td>A <code>dict</code> mapping the names of constants (eg <a href="constantly.NamedConstant.html"><code>NamedConstant</code></a> 
 instances) found in the class definition to those instances.</td>
   </tr><tr class="classmethod private">
     
     <td>Class Method</td>
-    <td><a class="code" data-type="Class Method" href="constantly._constants._ConstantsContainer.html#_constantFactory">_constantFactory</a></td>
+    <td><a href="constantly._constants._ConstantsContainer.html#_constantFactory" data-type="Class Method" class="code">_constantFactory</a></td>
     <td><span>Construct the value for a new constant to add to this container.</span></td>
   </tr>
 </table>
@@ -121,7 +121,7 @@ subclass to specify the type of constants allowed by that subclass.
     _enumerants =
   </div>
   <div class="functionBody">
-    A <code>dict</code> mapping the names of constants (eg <a href="constantly._constants.NamedConstant.html"><code>NamedConstant</code></a>
+    A <code>dict</code> mapping the names of constants (eg <a href="constantly.NamedConstant.html"><code>NamedConstant</code></a> 
 instances) found in the class definition to those instances.
   </div>
 </div><div class="basemethod">
@@ -159,10 +159,10 @@ instantiated.</p>
     
   </div>
   <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <a class="code" data-type="Class" href="constantly._constants.Flags.html">constantly._constants.Flags</a></div>
+    <div class="interfaceinfo">overridden in <a href="constantly.Flags.html" data-type="Class" class="code">constantly.Flags</a></div>
     <div><p>Construct the value for a new constant to add to this container.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>The name of the constant to create.</td></tr><tr><td></td><td class="fieldArg">descriptor</td><td>An instance of a <a href="constantly._constants._Constant.html"><code>_Constant</code></a> 
-subclass (eg <a href="constantly._constants.NamedConstant.html"><code>NamedConstant</code></a>)
-which is assigned to <code>name</code>.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><a href="constantly._constants.NamedConstant.html"><code>NamedConstant</code></a>
+subclass (eg <a href="constantly.NamedConstant.html"><code>NamedConstant</code></a>) which 
+is assigned to <code>name</code>.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><a href="constantly.NamedConstant.html"><code>NamedConstant</code></a> 
 instances have no value apart from identity, so return a meaningless dummy 
 value.</td></tr></table></div>
   </div>
@@ -184,7 +184,7 @@ value.</td></tr></table></div>
     
     <div><p>Retrieve a constant by its name or raise a <code>ValueError</code> if 
 there is no constant associated with that name.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>A <code>str</code> giving the name of one of the constants defined by 
-<code>cls</code>.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">The <a href="constantly._constants.NamedConstant.html"><code>NamedConstant</code></a>
+<code>cls</code>.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">The <a href="constantly.NamedConstant.html"><code>NamedConstant</code></a> 
 associated with <code>name</code>.</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg">ValueError</td><td>If <code>name</code> is not the name of one of the constants defined by 
 <code>cls</code>.</td></tr></table></div>
   </div>
@@ -204,20 +204,20 @@ associated with <code>name</code>.</td></tr><tr class="fieldStart"><td class="fi
   </div>
   <div class="docstring functionBody">
     
-    <div><p>Iteration over a <a href="constantly._constants.Names.html"><code>Names</code></a> subclass 
-results in all of the constants it contains.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">an iterator the elements of which are the <a href="constantly._constants.NamedConstant.html"><code>NamedConstant</code></a>
-instances defined in the body of this <a href="constantly._constants.Names.html"><code>Names</code></a> subclass.</td></tr></table></div>
+    <div><p>Iteration over a <a href="constantly.Names.html"><code>Names</code></a> 
+subclass results in all of the constants it contains.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">an iterator the elements of which are the <a href="constantly.NamedConstant.html"><code>NamedConstant</code></a> 
+instances defined in the body of this <a href="constantly.Names.html"><code>Names</code></a> subclass.</td></tr></table></div>
   </div>
 </div>
 
       </div>
       <address>
-        <a href="index.html">API Documentation</a> for constantly, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-05-30 17:07:43.
+        <a href="index.html">API Documentation</a> for constantly, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-05-30 18:36:47.
       </address>
 
     </div>
 
-    <script src="pydoctor.js" type="text/javascript"></script>
+    <script type="text/javascript" src="pydoctor.js"></script>
 
   </body>
 </html>

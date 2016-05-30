@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>constantly.FlagConstant : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            constantly API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button onclick="togglePrivate()" class="btn btn-link">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>constantly.FlagConstant(<a href="constantly._constants._Constant.html" data-type="Class" class="code">_Constant</a>)</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="constantly.html" data-type="Package" class="code">constantly</a></code>
+          
+          <a href="classIndex.html#constantly.FlagConstant">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p><a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> 
+defines an attribute to be a flag constant within a collection defined by a
+<a href="constantly.Flags.html"><code>Flags</code></a> subclass.</p>
+<p><a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> is 
+only for use in the definition of <a href="constantly.Flags.html"><code>Flags</code></a> subclasses. Do not 
+instantiate <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> elsewhere
+and do not subclass it.</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id10">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><a href="constantly.FlagConstant.html#__init__" data-type="Method" class="code">__init__</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="constantly.FlagConstant.html#__or__" data-type="Method" class="code">__or__</a></td>
+    <td><span>Define <code>|</code> on two <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instances
+to create a new <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instance 
+with all flags set in either instance set.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="constantly.FlagConstant.html#__and__" data-type="Method" class="code">__and__</a></td>
+    <td><span>Define <code>&amp;</code> on two <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instances
+to create a new <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instance 
+with only flags set in both instances set.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="constantly.FlagConstant.html#__xor__" data-type="Method" class="code">__xor__</a></td>
+    <td><span>Define <code>^</code> on two <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instances
+to create a new <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instance 
+with only flags set on exactly one instance set.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="constantly.FlagConstant.html#__invert__" data-type="Method" class="code">__invert__</a></td>
+    <td><span>Define <code>~</code> on a <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instance 
+to create a new <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instance 
+with all flags not set on this instance set.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="constantly.FlagConstant.html#__iter__" data-type="Method" class="code">__iter__</a></td>
+    <td></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="constantly.FlagConstant.html#__contains__" data-type="Method" class="code">__contains__</a></td>
+    <td></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><a href="constantly.FlagConstant.html#__nonzero__" data-type="Method" class="code">__nonzero__</a></td>
+    <td></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><a href="constantly.FlagConstant.html#_realize" data-type="Method" class="code">_realize</a></td>
+    <td><span>Complete the initialization of this <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a>.</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <a href="constantly._constants._Constant.html" data-type="Class" class="code">_Constant</a>:
+          </p>
+          <table class="children sortable" id="id11">
+  
+  <tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><a href="constantly._constants._Constant.html#name" data-type="Instance Variable" class="code">name</a></td>
+    <td>A <code>str</code> giving the name of this constant; only set once the 
+constant is initialized by <a href="constantly._constants._ConstantsContainer.html"><code>_ConstantsContainer</code></a>.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="constantly._constants._Constant.html#__repr__" data-type="Method" class="code">__repr__</a></td>
+    <td><span>Return text identifying both which constant this is and which collection
+it belongs to.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="constantly._constants._Constant.html#__lt__" data-type="Method" class="code">__lt__</a></td>
+    <td><span>Implements <code>&lt;</code>.  Order is defined by instantiation 
+order.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="constantly._constants._Constant.html#__le__" data-type="Method" class="code">__le__</a></td>
+    <td><span>Implements <code>&lt;=</code>.  Order is defined by instantiation 
+order.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="constantly._constants._Constant.html#__gt__" data-type="Method" class="code">__gt__</a></td>
+    <td><span>Implements <code>&gt;</code>.  Order is defined by instantiation 
+order.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="constantly._constants._Constant.html#__ge__" data-type="Method" class="code">__ge__</a></td>
+    <td><span>Implements <code>&gt;=</code>.  Order is defined by instantiation 
+order.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><a href="constantly._constants._Constant.html#_index" data-type="Instance Variable" class="code">_index</a></td>
+    <td>A <code>int</code> allocated from a shared counter in order to keep track 
+of the order in which <a href="constantly._constants._Constant.html"><code>_Constant</code></a>s are
+instantiated.</td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><a href="constantly._constants._Constant.html#_container" data-type="Instance Variable" class="code">_container</a></td>
+    <td>The <a href="constantly._constants._ConstantsContainer.html"><code>_ConstantsContainer</code></a>
+subclass this constant belongs to; <code>None</code> until the constant is 
+initialized by that subclass.</td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="constantly.FlagConstant.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __init__(self, value=_unspecified):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="constantly._constants._Constant.html#__init__" data-type="Method" class="code">constantly._constants._Constant.__init__</a></div>
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="constantly.FlagConstant._realize">
+    
+  </a>
+  <a name="_realize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    _realize(self, container, names, value):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="constantly._constants._Constant.html#_realize" data-type="Method" class="code">constantly._constants._Constant._realize</a></div>
+    <div><p>Complete the initialization of this <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a>.</p>
+<p>This implementation differs from other <code>_realize</code> 
+implementations in that a <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> may have 
+several names which apply to it, due to flags being combined with various 
+operators.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">container</td><td>The <a href="constantly.Flags.html"><code>Flags</code></a> subclass this 
+constant is part of.</td></tr><tr><td></td><td class="fieldArg">names</td><td>When a single-flag value is being initialized, a <code>str</code> giving 
+the name of that flag.  This is the case which happens when a <a href="constantly.Flags.html"><code>Flags</code></a> subclass is being 
+initialized and <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instances
+from its body are being realized.  Otherwise, a <code>set</code> of 
+<code>str</code> giving names of all the flags set on this <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instance.
+This is the case when two flags are combined using <code>|</code>, for 
+example.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="constantly.FlagConstant.__or__">
+    
+  </a>
+  <a name="__or__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __or__(self, other):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Define <code>|</code> on two <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instances
+to create a new <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instance 
+with all flags set in either instance set.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="constantly.FlagConstant.__and__">
+    
+  </a>
+  <a name="__and__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __and__(self, other):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Define <code>&amp;</code> on two <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instances
+to create a new <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instance 
+with only flags set in both instances set.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="constantly.FlagConstant.__xor__">
+    
+  </a>
+  <a name="__xor__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __xor__(self, other):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Define <code>^</code> on two <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instances
+to create a new <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instance 
+with only flags set on exactly one instance set.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="constantly.FlagConstant.__invert__">
+    
+  </a>
+  <a name="__invert__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __invert__(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Define <code>~</code> on a <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instance 
+to create a new <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instance 
+with all flags not set on this instance set.</p><table class="fieldTable"></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="constantly.FlagConstant.__iter__">
+    
+  </a>
+  <a name="__iter__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __iter__(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">An iterator of flags set on this instance set.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="constantly.FlagConstant.__contains__">
+    
+  </a>
+  <a name="__contains__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __contains__(self, flag):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">flag</td><td>The flag to test for membership in this instance set.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>True</code> if <code>flag</code> is in this instance set, else 
+<code>False</code>.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="constantly.FlagConstant.__nonzero__">
+    
+  </a>
+  <a name="__nonzero__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __nonzero__(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><code>False</code> if this flag's value is 0, else <code>True</code>.</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for constantly, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-05-30 18:36:47.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>

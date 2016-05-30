@@ -6,8 +6,8 @@
     <title>constantly._constants : API documentation</title>
 
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <link rel="stylesheet" href="bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="apidocs.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
   </head>
   <body>
 
@@ -22,7 +22,7 @@
     </nav>
 
     <div id="showPrivate">
-      <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+      <button onclick="togglePrivate()" class="btn btn-link">Toggle Private API</button>
     </div>
 
     <div class="container">
@@ -31,7 +31,7 @@
         <h1 class="module private"><code>constantly._constants</code> <small>module documentation</small></h1>
 
         <span id="partOf">
-          Part of <code><a class="code" data-type="Package" href="constantly.html">constantly</a></code>
+          Part of <code><a href="constantly.html" data-type="Package" class="code">constantly</a></code>
           
           
         </span>
@@ -47,76 +47,31 @@ text, numeric, and bit flag values.</p><table class="fieldTable"></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id2">
+        <table class="children sortable" id="id15">
   
-  <tr class="class">
+  <tr class="class private">
     
     <td>Class</td>
-    <td><a class="code" data-type="Class" href="constantly._constants.NamedConstant.html">NamedConstant</a></td>
-    <td><span><a href="constantly._constants.NamedConstant.html"><code>NamedConstant</code></a>
-defines an attribute to be a named constant within a collection defined by 
-a <a href="constantly._constants.Names.html"><code>Names</code></a> 
-subclass.</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><a class="code" data-type="Class" href="constantly._constants.Names.html">Names</a></td>
-    <td><span>A <a href="constantly._constants.Names.html"><code>Names</code></a> 
-subclass contains constants which differ only in their names and 
-identities.</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><a class="code" data-type="Class" href="constantly._constants.ValueConstant.html">ValueConstant</a></td>
-    <td><span><a href="constantly._constants.ValueConstant.html"><code>ValueConstant</code></a>
-defines an attribute to be a named constant within a collection defined by 
-a <a href="constantly._constants.Values.html"><code>Values</code></a> 
-subclass.</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><a class="code" data-type="Class" href="constantly._constants.Values.html">Values</a></td>
-    <td><span>A <a href="constantly._constants.Values.html"><code>Values</code></a> 
-subclass contains constants which are associated with arbitrary values.</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><a class="code" data-type="Class" href="constantly._constants.FlagConstant.html">FlagConstant</a></td>
-    <td><span><a href="constantly._constants.FlagConstant.html"><code>FlagConstant</code></a>
-defines an attribute to be a flag constant within a collection defined by a
-<a href="constantly._constants.Flags.html"><code>Flags</code></a> 
-subclass.</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><a class="code" data-type="Class" href="constantly._constants.Flags.html">Flags</a></td>
-    <td><span>A <a href="constantly._constants.Flags.html"><code>Flags</code></a> 
-subclass contains constants which can be combined using the common bitwise 
-operators (<code>|</code>, <code>&amp;</code>, etc) similar to a 
-<i>bitvector</i> from a language like C.</span></td>
-  </tr><tr class="class private">
-    
-    <td>Class</td>
-    <td><a class="code" data-type="Class" href="constantly._constants._Constant.html">_Constant</a></td>
+    <td><a href="constantly._constants._Constant.html" data-type="Class" class="code">_Constant</a></td>
     <td></td>
   </tr><tr class="class private">
     
     <td>Class</td>
-    <td><a class="code" data-type="Class" href="constantly._constants._ConstantsContainerType.html">_ConstantsContainerType</a></td>
+    <td><a href="constantly._constants._ConstantsContainerType.html" data-type="Class" class="code">_ConstantsContainerType</a></td>
     <td><span><a href="constantly._constants._ConstantsContainerType.html"><code>_ConstantsContainerType</code></a>
 is a metaclass for creating constants container classes.</span></td>
   </tr><tr class="class private">
     
     <td>Class</td>
-    <td><a class="code" data-type="Class" href="constantly._constants._ConstantsContainer.html">_ConstantsContainer</a></td>
+    <td><a href="constantly._constants._ConstantsContainer.html" data-type="Class" class="code">_ConstantsContainer</a></td>
     <td><span><a href="constantly._constants._ConstantsContainer.html"><code>_ConstantsContainer</code></a>
 is a class with attributes used as symbolic constants.  It is up to 
 subclasses to specify what kind of constants are allowed.</span></td>
   </tr><tr class="function private">
     
     <td>Function</td>
-    <td><a class="code" data-type="Function" href="constantly._constants.html#_flagOp">_flagOp</a></td>
-    <td><span>Implement a binary operator for a <a href="constantly._constants.FlagConstant.html"><code>FlagConstant</code></a>
+    <td><a href="constantly._constants.html#_flagOp" data-type="Function" class="code">_flagOp</a></td>
+    <td><span>Implement a binary operator for a <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> 
 instance.</span></td>
   </tr>
 </table>
@@ -143,23 +98,21 @@ instance.</span></td>
   </div>
   <div class="docstring functionBody">
     
-    <div><p>Implement a binary operator for a <a href="constantly._constants.FlagConstant.html"><code>FlagConstant</code></a>
+    <div><p>Implement a binary operator for a <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> 
 instance.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">op</td><td>A two-argument callable implementing the binary operation.  For example, 
-<code>operator.or_</code>.</td></tr><tr><td></td><td class="fieldArg">left</td><td>The left-hand <a href="constantly._constants.FlagConstant.html"><code>FlagConstant</code></a>
-instance.</td></tr><tr><td></td><td class="fieldArg">right</td><td>The right-hand <a href="constantly._constants.FlagConstant.html"><code>FlagConstant</code></a>
-instance.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">A new <a href="constantly._constants.FlagConstant.html"><code>FlagConstant</code></a>
+<code>operator.or_</code>.</td></tr><tr><td></td><td class="fieldArg">left</td><td>The left-hand <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instance.</td></tr><tr><td></td><td class="fieldArg">right</td><td>The right-hand <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> instance.</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">A new <a href="constantly.FlagConstant.html"><code>FlagConstant</code></a> 
 instance representing the result of the operation.</td></tr></table></div>
   </div>
 </div>
 
       </div>
       <address>
-        <a href="index.html">API Documentation</a> for constantly, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-05-30 17:07:43.
+        <a href="index.html">API Documentation</a> for constantly, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-05-30 18:36:47.
       </address>
 
     </div>
 
-    <script src="pydoctor.js" type="text/javascript"></script>
+    <script type="text/javascript" src="pydoctor.js"></script>
 
   </body>
 </html>

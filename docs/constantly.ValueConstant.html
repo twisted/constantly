@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>constantly.ValueConstant : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            constantly API Documentation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="showPrivate">
+      <button onclick="togglePrivate()" class="btn btn-link">Toggle Private API</button>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code>constantly.ValueConstant(<a href="constantly._constants._Constant.html" data-type="Class" class="code">_Constant</a>)</code> <small>class documentation</small></h1>
+
+        <span id="partOf">
+          Part of <code><a href="constantly.html" data-type="Package" class="code">constantly</a></code>
+          
+          <a href="classIndex.html#constantly.ValueConstant">(View In Hierarchy)</a>
+        </span>
+      </div>
+
+      <div class="extrasDocstring">
+        
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p><a href="constantly.ValueConstant.html"><code>ValueConstant</code></a> 
+defines an attribute to be a named constant within a collection defined by 
+a <a href="constantly.Values.html"><code>Values</code></a> subclass.</p>
+<p><a href="constantly.ValueConstant.html"><code>ValueConstant</code></a> 
+is only for use in the definition of <a href="constantly.Values.html"><code>Values</code></a> subclasses. Do not 
+instantiate <a href="constantly.ValueConstant.html"><code>ValueConstant</code></a> 
+elsewhere and do not subclass it.</p><table class="fieldTable"></table></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id6">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><a href="constantly.ValueConstant.html#__init__" data-type="Method" class="code">__init__</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <a href="constantly._constants._Constant.html" data-type="Class" class="code">_Constant</a>:
+          </p>
+          <table class="children sortable" id="id7">
+  
+  <tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><a href="constantly._constants._Constant.html#name" data-type="Instance Variable" class="code">name</a></td>
+    <td>A <code>str</code> giving the name of this constant; only set once the 
+constant is initialized by <a href="constantly._constants._ConstantsContainer.html"><code>_ConstantsContainer</code></a>.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="constantly._constants._Constant.html#__repr__" data-type="Method" class="code">__repr__</a></td>
+    <td><span>Return text identifying both which constant this is and which collection
+it belongs to.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="constantly._constants._Constant.html#__lt__" data-type="Method" class="code">__lt__</a></td>
+    <td><span>Implements <code>&lt;</code>.  Order is defined by instantiation 
+order.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="constantly._constants._Constant.html#__le__" data-type="Method" class="code">__le__</a></td>
+    <td><span>Implements <code>&lt;=</code>.  Order is defined by instantiation 
+order.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="constantly._constants._Constant.html#__gt__" data-type="Method" class="code">__gt__</a></td>
+    <td><span>Implements <code>&gt;</code>.  Order is defined by instantiation 
+order.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><a href="constantly._constants._Constant.html#__ge__" data-type="Method" class="code">__ge__</a></td>
+    <td><span>Implements <code>&gt;=</code>.  Order is defined by instantiation 
+order.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><a href="constantly._constants._Constant.html#_index" data-type="Instance Variable" class="code">_index</a></td>
+    <td>A <code>int</code> allocated from a shared counter in order to keep track 
+of the order in which <a href="constantly._constants._Constant.html"><code>_Constant</code></a>s are
+instantiated.</td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><a href="constantly._constants._Constant.html#_container" data-type="Instance Variable" class="code">_container</a></td>
+    <td>The <a href="constantly._constants._ConstantsContainer.html"><code>_ConstantsContainer</code></a>
+subclass this constant belongs to; <code>None</code> until the constant is 
+initialized by that subclass.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><a href="constantly._constants._Constant.html#_realize" data-type="Method" class="code">_realize</a></td>
+    <td><span>Complete the initialization of this <a href="constantly._constants._Constant.html"><code>_Constant</code></a>.</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="constantly.ValueConstant.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    def
+    __init__(self, value):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <a href="constantly._constants._Constant.html#__init__" data-type="Method" class="code">constantly._constants._Constant.__init__</a></div>
+    <div class="undocumented">Undocumented</div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for constantly, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> at 2016-05-30 18:36:47.
+      </address>
+
+    </div>
+
+    <script type="text/javascript" src="pydoctor.js"></script>
+
+  </body>
+</html>
