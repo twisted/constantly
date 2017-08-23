@@ -18,7 +18,7 @@ and can be installed via pip::
 Documentation
 -------------------------
 
-Documentation is available at `<http://constantly.readthedocs.io/en/latest/>`_.
+Documentation is available at `<https://constantly.readthedocs.io/en/latest/>`_.
 
 
 Tests
