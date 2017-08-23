@@ -6,6 +6,21 @@ It includes collections and constants with text, numeric, and bit flag values.
 Originally ``twisted.python.constants`` from the `Twisted <https://twistedmatrix.com/>`_ project.
 
 
+Installing
+----------
+
+constantly is available in `PyPI <https://pypi.org/project/constantly/>`_,
+and can be installed via pip::
+
+  $ pip install constantly
+
+
+Documentation
+-------------------------
+
+Documentation is available at `<https://constantly.readthedocs.io/en/latest/>`_.
+
+
 Tests
 -----
 
