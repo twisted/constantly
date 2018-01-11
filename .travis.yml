@@ -3,26 +3,33 @@ sudo: false
 
 matrix:
   include:
+    - python: 2.7
+      env: TOX_ENV=py27
+    - python: pypy
+      env: TOX_ENV=pypy
+    - python: 3.3
+      env: TOX_ENV=py33
+    - python: 3.4
+      env: TOX_ENV=py34
     - python: 3.5
-      env:
-        - TOX_ENV=py35
+      env: TOX_ENV=py35
+
+    - python: 2.7
+      env: TOX_ENV=pyflakes
+    - python: 2.7
+      env: TOX_ENV=cov
+    - python: 2.7
+      env: TOX_ENV=docs
+    - python: 2.7
+      env: TOX_ENV=apidocs
+    - python: 2.7
+      env: PUSH_DOCS=true
+
   fast_finish: true
 
 env:
   global:
     - secure: "Zmj7rrKx4z3JyaKNJUzILhMSESf7tCPBt9ad67veaX+fwYlJzrHUq+iy+5RXSye/g3vpsfehpKs/F2bAQcmX1ysLDOvd8w+UvwQPRi/GXxvVn7CHD6C4rpiSJAJHbCk7FZwQlo8P6VE8qiqUMCJcXjnjl63egkvJlkl6+rbE00E="
-  matrix:
-    - TOX_ENV=py27
-    - TOX_ENV=pypy
-    - TOX_ENV=py27
-    - TOX_ENV=pypy
-    - TOX_ENV=py33
-    - TOX_ENV=py34
-    - TOX_ENV=pyflakes
-    - TOX_ENV=cov
-    - TOX_ENV=docs
-    - TOX_ENV=apidocs
-    - PUSH_DOCS=true
 
 install:
   - pip install tox
