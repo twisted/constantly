@@ -5,7 +5,7 @@ import codecs
 import os
 import versioneer
 
-from setuptools import setup
+from setuptools import find_packages, setup
 
 def read(*parts):
     """
@@ -35,7 +35,7 @@ if __name__ == "__main__":
         keywords="constants,enum,twisted",
         license="MIT",
         name="constantly",
-        packages=["constantly"],
+        packages=find_packages(),
         url="https://github.com/twisted/constantly",
         maintainer='Twisted Matrix Labs Developers',
         version=versioneer.get_version(),
