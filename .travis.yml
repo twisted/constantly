@@ -4,24 +4,24 @@ sudo: false
 matrix:
   include:
     - python: 2.7
-      env: TOX_ENV=py27
+      env: TOXENV=py27
     - python: pypy
-      env: TOX_ENV=pypy
+      env: TOXENV=pypy
     - python: 3.3
-      env: TOX_ENV=py33
+      env: TOXENV=py33
     - python: 3.4
-      env: TOX_ENV=py34
+      env: TOXENV=py34
     - python: 3.5
-      env: TOX_ENV=py35
+      env: TOXENV=py35
 
     - python: 2.7
-      env: TOX_ENV=pyflakes
+      env: TOXENV=pyflakes
     - python: 2.7
-      env: TOX_ENV=cov
+      env: TOXENV=cov
     - python: 2.7
-      env: TOX_ENV=docs
+      env: TOXENV=docs
     - python: 2.7
-      env: TOX_ENV=apidocs
+      env: TOXENV=apidocs
     - python: 2.7
       env: PUSH_DOCS=true
 
@@ -35,7 +35,7 @@ install:
   - pip install tox
 
 script:
-  - if [[ -n "${TOX_ENV}" ]]; then tox -e $TOX_ENV; fi
+  - if [[ -n "${TOXENV}" ]]; then tox; fi
   - if [[ "$PUSH_DOCS" == "true" ]]; then ./.travis/build_docs.sh; fi
 
 notifications:
