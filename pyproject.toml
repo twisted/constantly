@@ -35,9 +35,6 @@ include-package-data = false
 [tool.setuptools.packages]
 find = {namespaces = false}
 
-[tool.distutils.bdist_wheel]
-universal = 1
-
 [tool.versioneer]
 VCS = "git"
 style = "pep440"
