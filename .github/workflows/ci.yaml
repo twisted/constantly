@@ -164,9 +164,8 @@ jobs:
 
     - name: Build
       run: |
-        python -m pip install --upgrade pip wheel pep517
         rm -rf dist/*
-        python setup.py bdist_wheel sdist
+        pipx run --python=python build .
 
     - name: Files to be pushed to PyPi
       run: ls -R dist/
