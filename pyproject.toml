@@ -1,3 +1,44 @@
 [build-system]
 requires = ["setuptools>=68.2", "versioneer[toml]==0.29"]
 build-backend = "setuptools.build_meta"
+
+[project]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+description = "Symbolic constants in Python"
+readme = "README.rst"
+keywords = ["constants", "enum", "twisted"]
+license = {text = "MIT"}
+name = "constantly"
+maintainers = [{name = "Twisted Matrix Labs Developers"}]
+urls = {Homepage = "https://github.com/twisted/constantly"}
+requires-python = ">= 3.8"
+dynamic = ["version"]
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages]
+find = {namespaces = false}
+
+[tool.versioneer]
+VCS = "git"
+style = "pep440"
+versionfile_source = "constantly/_version.py"
+versionfile_build = "constantly/_version.py"
+tag_prefix = ""
+parentdir_prefix = "constantly-"
