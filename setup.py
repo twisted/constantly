@@ -16,6 +16,9 @@ def read(*parts):
     with codecs.open(os.path.join(here, *parts), 'r', 'utf-8') as f:
         return f.read()
 
+with open("README.rst") as f:
+    long_description = f.read()
+
 if __name__ == "__main__":
     setup(
         classifiers=[
@@ -35,7 +38,7 @@ if __name__ == "__main__":
             'Topic :: Software Development :: Libraries :: Python Modules'
         ],
         description="Symbolic constants in Python",
-        long_description=read('README.rst'),
+        long_description=long_description,
         keywords="constants,enum,twisted",
         license="MIT",
         name="constantly",
