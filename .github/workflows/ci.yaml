@@ -9,22 +9,22 @@ name: CI
 on:
   push:
     branches:
-     - master
+     - trunk
     tags:
 
   pull_request:
-    branches: [ master ]
+    branches: [ trunk ]
 
 permissions:
   contents: read
 
 # Only have a run a single parallel for each branch.
-# Runs for master are queues.
-# Older runs for non-master branches are cancelled and the jobs are executed
+# Runs for trunk are queues.
+# Older runs for non-trunk branches are cancelled and the jobs are executed
 # only for the latest push to the branch.
 concurrency:
   group: ${{ github.ref }}
-  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/trunk' }}
 
 
 defaults:
