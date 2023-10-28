@@ -10,8 +10,8 @@ project.
 Installing
 ----------
 
-constantly is available in `PyPI <https://pypi.org/project/constantly/>`_,
-and can be installed via pip::
+constantly is available in `PyPI <https://pypi.org/project/constantly/>`_, and
+can be installed via pip::
 
   $ pip install constantly
 
