@@ -19,7 +19,6 @@ on:
 permissions:
   contents: read
 
-
 # Only have a run a single parallel for each branch.
 # Runs for trunk are queues.
 # Older runs for non-trunk branches are cancelled and the jobs are executed
@@ -153,6 +152,10 @@ jobs:
   release-publish:
     name: Check release and publish on twisted-* tag
     runs-on: 'ubuntu-latest'
+    permissions:
+      # IMPORTANT: this permission is mandatory for trusted publishing
+      id-token: write
+
     steps:
     - uses: actions/checkout@v3
 
