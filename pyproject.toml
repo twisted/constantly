@@ -42,3 +42,6 @@ versionfile_source = "constantly/_version.py"
 versionfile_build = "constantly/_version.py"
 tag_prefix = ""
 parentdir_prefix = "constantly-"
+
+[bdist_wheel]
+universal=0
