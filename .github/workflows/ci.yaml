@@ -55,6 +55,9 @@ jobs:
         python-version: ${{ matrix.python-version }}
         allow-prereleases: true
 
+    - name: Test build
+      run: pipx run --python=python build .
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade twisted coverage build
