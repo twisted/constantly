@@ -60,10 +60,12 @@ jobs:
 
     - name: Install dependencies
       run: |
-        openssl version
         python -m pip install --upgrade twisted coverage build
 
-    - name: Test
+    - name: Test build on each supported python
+      run: python -m build .
+
+    - name: Test code
       run: |
         coverage run -m twisted.trial constantly
         mv .coverage .coverage.${{ matrix.python-version }}
@@ -74,6 +76,7 @@ jobs:
         name: coverage-data
         path: .coverage.*
         if-no-files-found: error # 'warn' or 'ignore' are also available.
+
 
   coverage:
     name: Combine & check coverage.
@@ -155,6 +158,10 @@ jobs:
   release-publish:
     name: Check release and publish on twisted-* tag
     runs-on: 'ubuntu-latest'
+    permissions:
+      # IMPORTANT: this permission is mandatory for trusted publishing
+      id-token: write
+
     steps:
     - uses: actions/checkout@v3
 
@@ -163,10 +170,14 @@ jobs:
       with:
         python-version: '${{ env.DEFAULT_PYTHON_VERSION }}'
 
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade build
+
     - name: Build
       run: |
         rm -rf dist/*
-        pipx run --python=python build .
+        python -m build .
 
     - name: Files to be pushed to PyPi
       run: ls -R dist/
@@ -179,7 +190,7 @@ jobs:
 
     - name: Publish to PyPI - on tag
       if: startsWith(github.ref, 'refs/tags/')
-      uses: pypa/gh-action-pypi-publish@a56da0b891b3dc519c7ee3284aff1fad93cc8598
+      uses: pypa/gh-action-pypi-publish@release/v1
 
 
   # We have this job so that the PR can be blocked on a single job.
