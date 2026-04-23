@@ -68,6 +68,7 @@ jobs:
     - name: Test code
       run: |
         coverage run -p -m twisted.trial constantly
+        ls .coverage.*
 
     - name: Upload coverage data
       uses: actions/upload-artifact@v7
