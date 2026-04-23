@@ -76,6 +76,7 @@ jobs:
         name: coverage-data
         path: .coverage.*
         if-no-files-found: error # 'warn' or 'ignore' are also available.
+        include-hidden-files: true
 
 
   coverage:
