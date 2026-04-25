@@ -143,11 +143,15 @@ jobs:
         python-version: ${{ env.DEFAULT_PYTHON_VERSION }}
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pydoctor
+        python -m pip install --upgrade pydoctor sphinx
 
     - name: Run pydoctor
       run: |
         pydoctor --project-name constantly constantly
+
+    - name: Run Sphinx
+      run: |
+        sphinx-build -W -b html docs/ docs/_build/html
 
 
   # Used for various release automation.
