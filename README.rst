@@ -31,3 +31,8 @@ To run tests::
 
 This will run tests on Python 2.7, 3.3, 3.4, and PyPy, as well as doing
 coverage and pyflakes checks.
+
+AI Policy
+---------
+
+Nevow follows the `Twisted AI Policy <https://docs.twisted.org/en/latest/development/ai-policy.html>`_. This means this project does not allow the inclusion of the outputs of generative AI tools.
